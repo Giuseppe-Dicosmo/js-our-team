@@ -54,4 +54,38 @@ for (let i = 0; i < team.length; i++) {
 
 }
 
+const button = document.querySelector('#addMemberButton')
+
+function col() {
+  const newTeam = {
+    name : document.getElementById('name').value,
+    role : document.getElementById('role').value,
+    image : document.getElementById('image').value,
+  }
+
+  team.push(newTeam);
+
+  const nome = team[team.length-1].name
+  console.log("nome", nome)
+  const ruoli = team[team.length-1].role
+  console.log("ruoli", ruoli)
+  const img = team[team.length-1].image
+  console.log("img", img)
+
+  memebri.innerHTML += `
+  <div class="team-card">
+    <div class="card-image">
+      <img src="img/${img}" alt="${nome}"/>
+    </div>
+    <div class="card-text">
+      <h3>${nome}</h3>
+      <p>${ruoli}</p>
+    </div>
+  </div>
+  `
+
+}
+
+button.addEventListener('click', col)
+
 
